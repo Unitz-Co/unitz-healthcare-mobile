@@ -1,0 +1,95 @@
+name: beta android
+
+on:
+  push:
+    branches:
+      - 'beta/android'
+jobs:
+  beta-android:
+    runs-on: ubuntu-latest
+    env:
+      working-directory: ./ws/packages/unitz-healthcare-mobile
+      codepush-appname: Unitz/Unitz-Android
+      codepush-deployment: Staging
+    steps:
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.0.0
+      - name: Set up our JDK environment
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 1.8
+      - name: setup node v14
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          check-latest: true
+      - name: cleanup
+        run: |
+          rm -Rf ./*
+      - name: clone workspace
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/ws-app-mobile
+          path: ws
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
+      - name: clone env
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/envprod-app-mobile
+          path: config/env-app-mobile
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
+      - name: clone credentials
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/credentials-prod
+          path: config/credentials
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
+      - name: clone config
+        uses: actions/checkout@v2
+        with:
+          repository: Unitz-Co/ws-scripts
+          path: config/ws-scripts
+          token: ${{ secrets.PAT_TOKEN }}
+          persist-credentials: true
+      - name: checkout submodule
+        run: |
+          cd ws
+          git config --file .gitmodules --get-regexp url | while read url; do
+            git config --file=.gitmodules $(echo "$url" | sed -E "s/git@github.com:|https:\/\/github.com\//https:\/\/${{ secrets.PAT_TOKEN }}:${{ secrets.PAT_TOKEN }}@github.com\//")
+          done
+          git submodule sync
+          git submodule update --init --recursive --remote --force
+      - name: retrive certs and env
+        working-directory: ${{env.working-directory}}
+        run: |
+          yarn config:android
+      - name: check dir
+        working-directory: ${{env.working-directory}}
+        run: |
+          PWD=$(pwd)
+      - name: build modules
+        working-directory: ${{env.working-directory}}
+        run: |
+          pwd
+          yarn install
+          yarn nuke:modules
+      - name: Setup kernel for react native, increase watchers
+        run: echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+      - name: build android
+        working-directory: ${{env.working-directory}}
+        run: |
+          source ../../../config/ws-scripts/sm/num.sh
+          echo "BUILD_NUMBER_CUR: $BUILD_NUMBER_CUR"
+          sed -i -e '/^JSBUNDLE_NUMBER=/s/=.*/='$BUILD_NUMBER_CUR'/g' env/US.env
+          sudo yarn build:android:beta
+          cd ../..
+      - uses: iRoachie/slack-github-actions@v2.3.0
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK }}
+        with:
+          status: ${{ job.status }}
+        if: ${{ always() }}
