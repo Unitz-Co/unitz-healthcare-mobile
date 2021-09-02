@@ -1,0 +1,102 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:android)
+package = load_json(json_path: "../package.json")
+
+platform :android do
+  desc "Runs all the tests"
+  lane :test do
+    gradle(task: "test")
+  end
+
+  desc "Update build version"
+  lane :update_version do
+    VERSION_CODE = ENV['BUILD_NUMBER_CUR'] || (Time.now.to_i() - 1577840400) / 100
+    android_set_version_code(
+      version_code: VERSION_CODE
+    )
+    # first release
+    android_set_version_name(
+      version_name: package["version"] || "1.1.3"
+    )
+    # gradle(task: "assembleRelease")
+  end
+
+  desc "Submit a new Beta Build to Firebase distribution"
+  lane :stage do
+    update_version()
+    gradle(
+      task: 'assemble',
+      build_type: 'Release',
+    )
+  end
+
+  desc "Submit a new Beta Build to Crashlytics Beta"
+  lane :beta do
+    update_version()
+    gradle(
+      tasks: ['bundleRelease', 'assembleRelease'],
+    )
+
+    # crashlytics
+
+    upload_to_play_store(
+      track: 'internal',
+      release_status: 'draft',
+      skip_upload_screenshots: true,
+      skip_upload_images: true,
+      aab: 'app/build/outputs/bundle/release/app-release.aab',
+    )
+  
+  end
+
+  desc "Deploy a new version to the Google Play"
+  lane :release do
+    update_version()
+    gradle(
+      task: 'bundle',
+      build_type: 'Release',
+    )
+    upload_to_play_store(
+      track: 'production',
+      release_status: 'draft',
+      aab: 'app/build/outputs/bundle/release/app-release.aab',
+    )
+  end
+
+  desc "Update appicon"
+  lane :update_appicon do
+    android_appicon(
+      appicon_image_file: '../../../modules/unitz-assets/User/Icon.png',
+      appicon_path: 'app/src/main/res/mipmap',
+      generate_rounded: true
+    )
+  end
+  
+  desc "Update splash"
+  lane :update_splash do
+    # android_appicon(
+    #   appicon_image_file: '../../../modules/unitz-assets/splash.png',
+    #   appicon_icon_types: %i[splash_port splash_land],
+    #   appicon_path: 'app/src/main/res_t/drawable/splash',
+    #   appicon_filename: 'splash'
+    # )
+    yarn(
+      command: "config-splash-android",
+      package_path: "../package.json"
+    )
+  end
+end

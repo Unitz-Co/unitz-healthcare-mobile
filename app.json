@@ -2,8 +2,8 @@
   "name": "unitzmobile",
   "displayName": "Unitz",
   "expo": {
-    "name": "unitz-mobile",
-    "slug": "unitz-mobile",
+    "name": "unitz-healthcare-mobile",
+    "slug": "unitz-healthcare-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "../../modules/unitz-assets/Icon.png",
@@ -13,9 +13,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "config": {
