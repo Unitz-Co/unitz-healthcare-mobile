@@ -1,6 +1,6 @@
 //
 //  OTInstall.swift
-//  unitzmobile
+//  unitzhealthcaremobile
 //
 //  Created by Hung Tran on 2/8/21.
 //

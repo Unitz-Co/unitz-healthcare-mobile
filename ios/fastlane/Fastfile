@@ -12,7 +12,7 @@
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
-PROJECT_NAME = "unitzmobile"
+PROJECT_NAME = "unitzhealthcaremobile"
 XCODE_PROJECT = "#{PROJECT_NAME}.xcodeproj"
 XCODE_WORKSPACE = "#{PROJECT_NAME}.xcworkspace"
 OUTPUT_DIRECTORY = "./fastlane/builds"
@@ -28,7 +28,7 @@ package = load_json(json_path: "../package.json")
 platform :ios do
   desc "Push a new beta build to TestFlight"
   lane :betalocal do
-    increment_build_number(xcodeproj: "unitzmobile.xcodeproj")
+    increment_build_number(xcodeproj: "unitzhealthcaremobile.xcodeproj")
     get_certificates( # Create or get certificate, and install it
       output_path: "./builds" # Download certificate in the build folder (you don't need to create the folder)
     )
@@ -37,8 +37,8 @@ platform :ios do
       filename: "provisioning.mobileprovision" # Rename the local provisioning profile
     )
     update_project_provisioning( # Set the project provisioning profile (related in Xcode to the General > Signing Release section)
-      xcodeproj: "unitzmobile.xcodeproj",
-      target_filter: "unitzmobile", # Name of your project
+      xcodeproj: "unitzhealthcaremobile.xcodeproj",
+      target_filter: "unitzhealthcaremobile", # Name of your project
       profile: "./builds/provisioning.mobileprovision",
       build_configuration: "Release"
     )
@@ -49,8 +49,8 @@ platform :ios do
     update_CodePushDeploymentKey
 
     build_app(
-      workspace: "unitzmobile.xcworkspace",
-      scheme: "unitzmobile",
+      workspace: "unitzhealthcaremobile.xcworkspace",
+      scheme: "unitzhealthcaremobile",
       clean: true,
       export_method: "app-store",
       export_options: {
@@ -280,7 +280,7 @@ platform :ios do
       in_house: false, # optional but may be required if using match/sigh
     )
     upload_to_testflight(
-      ipa: './builds/outputs/unitzmobile.ipa',
+      ipa: './builds/outputs/unitzhealthcaremobile.ipa',
       skip_waiting_for_build_processing: true,
       api_key: api_key
     )
@@ -300,7 +300,7 @@ platform :ios do
   lane :update_appicon do
     appicon(
       appicon_devices: [:ipad, :iphone, :ios_marketing],
-      appicon_path: "unitzmobile/Images.xcassets",
+      appicon_path: "unitzhealthcaremobile/Images.xcassets",
       appicon_image_file: '../../../modules/unitz-assets/User/Icon.jpg'
     )
   end
@@ -310,7 +310,7 @@ platform :ios do
     # appicon(
     #   appicon_image_file: '../../../modules/unitz-assets/User/splashscreen.png',
     #   appicon_devices: [:universal],
-    #   appicon_path: "unitzmobile/Images.xcassets",
+    #   appicon_path: "unitzhealthcaremobile/Images.xcassets",
     #   appicon_name: 'SplashScreen.imageset'
     # )
     yarn(
