@@ -40,7 +40,7 @@ import AppStripeProvider from '@uz/unitz-providers/AppStripeProvider';
 import * as Sentry from '@sentry/react-native';
 
 Sentry.init({
-  dsn: 'https://5ad567dccfce417683b816c669c7eea2@o946942.ingest.sentry.io/5896068',
+  dsn: 'https://6b73b66c10be436cbebfac75fd6408cc@o946942.ingest.sentry.io/5943978',
 });
 
 const App = CodePushProvider(
