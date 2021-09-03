@@ -1,5 +1,5 @@
 {
-  "name": "unitzmobile",
+  "name": "unitzhealthcaremobile",
   "displayName": "Unitz",
   "expo": {
     "name": "unitz-healthcare-mobile",
@@ -23,11 +23,11 @@
         }
       },
       "googleServicesFile": "./ios/GoogleService-Info.plist",
-      "bundleIdentifier": "app.unitz.user",
+      "bundleIdentifier": "app.unitz.healthcare",
       "buildNumber": "1"
     },
     "android": {
-      "package": "app.unitz.user",
+      "package": "app.unitz.healthcare",
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-6395643728392024~1526666099"
       },

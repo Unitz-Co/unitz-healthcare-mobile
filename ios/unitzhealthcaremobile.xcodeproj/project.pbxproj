@@ -15,7 +15,7 @@
 		6498A2FB26BD0747004F70B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6498A2FD26BD0747004F70B4 /* InfoPlist.strings */; };
 		79EEB32D267F1F9E0091D7E4 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79EEB32C267F1F9E0091D7E4 /* AppCenter-Config.plist */; };
 		96905EF65AED1B983A6B3ABC /* libPods-unitzhealthcaremobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-unitzhealthcaremobile.a */; };
-		B232E42B262952B000D2B9F3 /* unitzmobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232E42A262952B000D2B9F3 /* unitzmobileUITests.swift */; };
+		B232E42B262952B000D2B9F3 /* unitzhealthcaremobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232E42A262952B000D2B9F3 /* unitzhealthcaremobileUITests.swift */; };
 		B232E4352629541500D2B9F3 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B232E4342629541500D2B9F3 /* SnapshotHelper.swift */; };
 		B27E96DD25D12E6900C5B77F /* OTInstall.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27E96DC25D12E6900C5B77F /* OTInstall.swift */; };
 		B2EDCD8225BE849A0013216E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2EDCD8125BE849A0013216E /* GoogleService-Info.plist */; };
@@ -48,8 +48,8 @@
 		79EEB32C267F1F9E0091D7E4 /* AppCenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-unitzhealthcaremobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-unitzhealthcaremobile.release.xcconfig"; path = "Target Support Files/Pods-unitzhealthcaremobile/Pods-unitzhealthcaremobile.release.xcconfig"; sourceTree = "<group>"; };
 		AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = unitzhealthcaremobile/SplashScreen.storyboard; sourceTree = "<group>"; };
-		B232E428262952B000D2B9F3 /* unitzmobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unitzmobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B232E42A262952B000D2B9F3 /* unitzmobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unitzmobileUITests.swift; sourceTree = "<group>"; };
+		B232E428262952B000D2B9F3 /* unitzhealthcaremobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = unitzhealthcaremobileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B232E42A262952B000D2B9F3 /* unitzhealthcaremobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unitzhealthcaremobileUITests.swift; sourceTree = "<group>"; };
 		B232E42C262952B000D2B9F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B232E4342629541500D2B9F3 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		B2456E2725DB7B6900880F96 /* unitzhealthcaremobile.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = unitzhealthcaremobile.entitlements; path = unitzhealthcaremobile/unitzhealthcaremobile.entitlements; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				B2EDCD8125BE849A0013216E /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* unitzhealthcaremobile */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				B232E429262952B000D2B9F3 /* unitzmobileUITests */,
+				B232E429262952B000D2B9F3 /* unitzhealthcaremobileUITests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				D65327D7A22EEC0BE12398D9 /* Pods */,
@@ -138,19 +138,19 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* unitzhealthcaremobile.app */,
-				B232E428262952B000D2B9F3 /* unitzmobileUITests.xctest */,
+				B232E428262952B000D2B9F3 /* unitzhealthcaremobileUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B232E429262952B000D2B9F3 /* unitzmobileUITests */ = {
+		B232E429262952B000D2B9F3 /* unitzhealthcaremobileUITests */ = {
 			isa = PBXGroup;
 			children = (
 				B232E4342629541500D2B9F3 /* SnapshotHelper.swift */,
-				B232E42A262952B000D2B9F3 /* unitzmobileUITests.swift */,
+				B232E42A262952B000D2B9F3 /* unitzhealthcaremobileUITests.swift */,
 				B232E42C262952B000D2B9F3 /* Info.plist */,
 			);
-			path = unitzmobileUITests;
+			path = unitzhealthcaremobileUITests;
 			sourceTree = "<group>";
 		};
 		BB2F792B24A3F905000567C9 /* Supporting */ = {
@@ -199,9 +199,9 @@
 			productReference = 13B07F961A680F5B00A75B9A /* unitzhealthcaremobile.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B232E427262952B000D2B9F3 /* unitzmobileUITests */ = {
+		B232E427262952B000D2B9F3 /* unitzhealthcaremobileUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B232E431262952B000D2B9F3 /* Build configuration list for PBXNativeTarget "unitzmobileUITests" */;
+			buildConfigurationList = B232E431262952B000D2B9F3 /* Build configuration list for PBXNativeTarget "unitzhealthcaremobileUITests" */;
 			buildPhases = (
 				B232E424262952B000D2B9F3 /* Sources */,
 				B232E425262952B000D2B9F3 /* Frameworks */,
@@ -212,9 +212,9 @@
 			dependencies = (
 				B232E42E262952B000D2B9F3 /* PBXTargetDependency */,
 			);
-			name = unitzmobileUITests;
-			productName = unitzmobileUITests;
-			productReference = B232E428262952B000D2B9F3 /* unitzmobileUITests.xctest */;
+			name = unitzhealthcaremobileUITests;
+			productName = unitzhealthcaremobileUITests;
+			productReference = B232E428262952B000D2B9F3 /* unitzhealthcaremobileUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -254,7 +254,7 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* unitzhealthcaremobile */,
-				B232E427262952B000D2B9F3 /* unitzmobileUITests */,
+				B232E427262952B000D2B9F3 /* unitzhealthcaremobileUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -442,7 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B232E42B262952B000D2B9F3 /* unitzmobileUITests.swift in Sources */,
+				B232E42B262952B000D2B9F3 /* unitzhealthcaremobileUITests.swift in Sources */,
 				B232E4352629541500D2B9F3 /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,9 +486,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = unitzhealthcaremobile/unitzhealthcaremobile.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 444443;
+				CURRENT_PROJECT_VERSION = 528088;
 				DEVELOPMENT_TEAM = AU6K7HJ8GP;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -505,9 +505,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.user;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.healthcare;
 				PRODUCT_NAME = unitzhealthcaremobile;
-				PROVISIONING_PROFILE_SPECIFIER = "match Development app.unitz.user";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc app.unitz.healthcare";
 				SWIFT_OBJC_BRIDGING_HEADER = "unitzhealthcaremobile-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -523,9 +523,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = unitzhealthcaremobile/unitzhealthcaremobile.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 444443;
+				CURRENT_PROJECT_VERSION = 528088;
 				DEVELOPMENT_TEAM = AU6K7HJ8GP;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = unitzhealthcaremobile/Info.plist;
@@ -537,10 +537,10 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.user;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.healthcare;
 				PRODUCT_NAME = unitzhealthcaremobile;
 				PROVISIONING_PROFILE = "23ed799f-e8b5-46ca-819a-b725eaded106";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development app.unitz.user";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc app.unitz.healthcare";
 				SWIFT_OBJC_BRIDGING_HEADER = "unitzhealthcaremobile-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -677,16 +677,16 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = AU6K7HJ8GP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = unitzmobileUITests/Info.plist;
+				INFOPLIST_FILE = unitzhealthcaremobileUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.user;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.healthcare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "23ed799f-e8b5-46ca-819a-b725eaded106";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc app.unitz.user";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "match AdHoc app.unitz.user";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc app.unitz.healthcare";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "match AdHoc app.unitz.healthcare";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -712,15 +712,15 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = AU6K7HJ8GP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = unitzmobileUITests/Info.plist;
+				INFOPLIST_FILE = unitzhealthcaremobileUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.user;
+				PRODUCT_BUNDLE_IDENTIFIER = app.unitz.healthcare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "23ed799f-e8b5-46ca-819a-b725eaded106";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc app.unitz.user";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "match AdHoc app.unitz.user";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc app.unitz.healthcare";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "match AdHoc app.unitz.healthcare";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -749,7 +749,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B232E431262952B000D2B9F3 /* Build configuration list for PBXNativeTarget "unitzmobileUITests" */ = {
+		B232E431262952B000D2B9F3 /* Build configuration list for PBXNativeTarget "unitzhealthcaremobileUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B232E42F262952B000D2B9F3 /* Debug */,

@@ -1,13 +1,13 @@
 //
-//  unitzmobileUITests.swift
-//  unitzmobileUITests
+//  unitzhealthcaremobileUITests.swift
+//  unitzhealthcaremobileUITests
 //
 //  Created by Hung Tran on 4/16/21.
 //
 
 import XCTest
 
-class unitzmobileUITests: XCTestCase {
+class unitzhealthcaremobileUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
