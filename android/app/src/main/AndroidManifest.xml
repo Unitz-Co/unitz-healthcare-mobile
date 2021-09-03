@@ -1,7 +1,7 @@
 <manifest
   xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  package="app.unitz.user"
+  package="app.unitz.healthcare"
 >
   <uses-permission android:name="android.permission.INTERNET"/>
   <!-- OPTIONAL PERMISSIONS, REMOVE WHATEVER YOU DO NOT NEED -->
@@ -38,7 +38,7 @@
     android:theme="@style/AppTheme"
     android:usesCleartextTraffic="true"
   >
-    <meta-data android:name="expo.modules.updates.EXPO_UPDATE_URL" android:value="https://exp.host/@hungtran0203/unitzmobile"/>
+    <meta-data android:name="expo.modules.updates.EXPO_UPDATE_URL" android:value="https://exp.host/@hungtran0203/unitzhealthcaremobile"/>
     <meta-data android:name="expo.modules.updates.EXPO_SDK_VERSION" android:value="39.0.0"/>
     <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
     <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-6395643728392024~1526666099"/>

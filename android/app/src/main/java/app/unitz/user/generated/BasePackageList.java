@@ -1,4 +1,4 @@
-package app.unitz.user.generated;
+package app.unitz.healthcare.generated;
 
 import java.util.Arrays;
 import java.util.List;

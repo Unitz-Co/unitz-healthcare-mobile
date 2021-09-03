@@ -135,7 +135,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "app.unitz.user"
+        applicationId "app.unitz.healthcare"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 8
