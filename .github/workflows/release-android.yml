@@ -3,13 +3,13 @@ name: Release android
 on:
   push:
     branches:
-      - 'release/android'
+      - "release/android"
 jobs:
   release-android:
     runs-on: ubuntu-latest
     env:
       working-directory: ./ws/packages/unitz-healthcare-mobile
-      codepush-appname: Unitz/Unitz-Android
+      codepush-appname: Unitz/Unitz-Healthcare-Android
       codepush-deployment: Staging
     steps:
       - uses: ruby/setup-ruby@v1

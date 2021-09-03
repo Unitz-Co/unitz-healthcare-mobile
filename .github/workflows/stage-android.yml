@@ -3,13 +3,13 @@ name: Stage Distribute android
 on:
   push:
     branches:
-      - 'stage/android'
+      - "stage/android"
 jobs:
   stage-android:
     runs-on: ubuntu-latest
     env:
       working-directory: ./ws/packages/unitz-healthcare-mobile
-      codepush-appname: Unitz/Unitz-Android
+      codepush-appname: Unitz/Unitz-Healthcare-Android
       codepush-deployment: Staging
     steps:
       - uses: ruby/setup-ruby@v1
@@ -86,6 +86,7 @@ jobs:
           echo "BUILD_NUMBER_CUR: $BUILD_NUMBER_CUR"
           sed -i -e '/^JSBUNDLE_NUMBER=/s/=.*/='$BUILD_NUMBER_CUR'/g' env/US.env
           sudo yarn build:android:stage
+          yarn dist:android:fib --app ${{secrets.FIREBASE_ANDROID_APP_ID}} --groups testers --token ${{secrets.FIREBASE_TOKEN}}
           cd ../..
       - name: install appcenter
         working-directory: ${{env.working-directory}}

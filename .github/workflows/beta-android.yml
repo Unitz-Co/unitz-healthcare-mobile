@@ -3,13 +3,13 @@ name: beta android
 on:
   push:
     branches:
-      - 'beta/android'
+      - "beta/android"
 jobs:
   beta-android:
     runs-on: ubuntu-latest
     env:
       working-directory: ./ws/packages/unitz-healthcare-mobile
-      codepush-appname: Unitz/Unitz-Android
+      codepush-appname: Unitz/Unitz-Healthcare-Android
       codepush-deployment: Staging
     steps:
       - uses: ruby/setup-ruby@v1
